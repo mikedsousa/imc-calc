@@ -5,7 +5,6 @@ import Button from "./Button";
 import "./ImcCalc.css";
 
 const ImcCalc = ({calcImc}) => {
-  e.preventDefault();
   const [height, setHeight] = useState("");
   const [weight, setWeight] = useState("");
 
@@ -59,7 +58,7 @@ const ImcCalc = ({calcImc}) => {
           </div>
         </div>
         <div className="action-control">
-          <Button id="calc-btn" text="Calcular" action={calcImc}/>
+          <Button id="calc-btn" text="Calcular" action={(e) => calcImc(e, height, weight)}/>
           <Button id="clear-btn" text="Limpar" action={clearForm} />
         </div>
       </form>
